@@ -1,0 +1,38 @@
+variable "vsphere_server" {}
+variable "vsphere_user" {
+    description = "user with ssh access"
+}
+variable "vsphere_password" {
+    description = "password for user with ssh access"
+}
+
+provider "vsphere" {
+  user           = "${var.vsphere_user}"
+  password       = "${var.vsphere_password}"
+  vsphere_server = "${var.vsphere_server}"
+
+  # If you have a self-signed cert
+  allow_unverified_ssl = true
+}
+
+data "vsphere_datacenter" "dc" {
+  name = "dc1"
+}
+data "vsphere_host" "host"{
+  name = "esxi000"
+  datacenter_id = "${data.vsphere_datacenter.dc.id}"
+}
+data "vsphere_datastore" "datastore" {
+  name          = "DS1"
+  datacenter_id = "${data.vsphere_datacenter.dc.id}"
+}
+
+data "vsphere_resource_pool" "pool" {
+  name          = "cluster1/Resources"
+  datacenter_id = "${data.vsphere_datacenter.dc.id}"
+}
+
+data "vsphere_network" "network" {
+  name          = "development"
+  datacenter_id = "${data.vsphere_datacenter.dc.id}"
+}
