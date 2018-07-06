@@ -1,6 +1,7 @@
 # Getting started with Terraform and VMware vSphere ESXi + vCenter
 
 NOTE: The Terraform vSphere provider does not work with the free ESXi licesnse
+![tf_vmware](tf_vmware.webp)
 
 ## Prerequisites
 
@@ -9,12 +10,22 @@ NOTE: The Terraform vSphere provider does not work with the free ESXi licesnse
 
 ## Getting Started
 
-Either by cloning the repository or starting your own, run `terraform init` to download the sphere provider.
+Either by cloning this repository or starting your own, run `terraform init` to download the sphere provider.
 
-### Sources/Resources
+create a `terraform.tfvars` to add sensitive information to. Terraform looks for and includes this file when you run `terraform plan`
 
-[Terraform vSphere Provider](https://github.com/terraform-providers/terraform-provider-vsphere/tree/master/examples)
-[Terraform vSPhere Docs](https://www.terraform.io/docs/providers/vsphere/index.html)
+once you have reviewed `terraform plan` run `terraform apply`
+
+---
+
+### Resources
+
+[Terraform Github vSphere Provider](https://github.com/terraform-providers/terraform-provider-vsphere/tree/master/examples)
+[Terraform vSphere Docs](https://www.terraform.io/docs/providers/vsphere/index.html)
+
+---
+
+### Sources
 
 [deploying vms to vsphere with terraform](https://emilwypych.com/2017/02/26/deploying-vsphere-vm-with-terraform/?cn-reloaded=1)
 [deploy vm template with terraform](https://blog.inkubate.io/deploy-a-vmware-vsphere-virtual-machine-with-terraform/)
