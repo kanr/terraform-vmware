@@ -23,3 +23,4 @@ Terraform with Vsphere [Part 1](https://www.vgemba.net/vmware/terraform/Terrafor
 [Terraform vCenter + chef](https://blog.chef.io/2017/11/13/terraform-vcenter-chef/)
 [example1](https://github.com/pjgunadi/ibm-cloud-private-terraform-vmware)
 [example2](https://github.com/ewypych/terraform-vsphere-single-vm)
+[example3](https://github.com/mtaumike/vmware-tf-example)
